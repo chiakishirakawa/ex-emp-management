@@ -39,7 +39,7 @@
           <!-- 背景をグレーに、埋め込んだようなコンポーネント -->
           <div class="well">
             <!-- ここから上を編集する必要はありません -->
-            <form method="post" action="login.html">
+            <form method="post" action="login.html" th:action ="@{/insert}" th:object = "${insertAdministratorForm}">
               <fieldset>
                 <legend>
                   管理者登録<br />(システムにログインできる管理者を登録します)
@@ -53,6 +53,7 @@
                         氏名を入力してください
                       </label>
                       <input
+                        th:field="*{name}"
                         type="text"
                         name="name"
                         id="name"
@@ -71,6 +72,7 @@
                         メールアドレスを入力してください
                       </label>
                       <input
+                        th:field="*{mailAddress}"
                         type="text"
                         name="mailAddress"
                         id="mailAddress"
@@ -89,6 +91,7 @@
                         パスワードを入力してください
                       </label>
                       <input
+                        th:field="*{password}"
                         type="password"
                         name="password"
                         id="password"
