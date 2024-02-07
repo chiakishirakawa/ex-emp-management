@@ -17,6 +17,7 @@ public class AdministratorRepository {
 
     private static final RowMapper<Administrator> ADMINISTRATOR_ROW_MAPPER= (rs,index)->{
         Administrator administrator = new Administrator();
+        administrator.setId(rs.getInt("id"));
         administrator.setName(rs.getString("name"));
         administrator.setMailAddress(rs.getString("mailAddress"));
         administrator.setPassword(rs.getString("password"));
@@ -37,15 +38,15 @@ public class AdministratorRepository {
 
     private static final String FIND_BY_MAIL_ADDRESS_AND_PASSWORD = """
         SELECT 
-        id
-        ,name
-        ,mail_address
-        ,password 
+            id
+            ,name
+            ,mail_address
+            ,password 
         FROM administrators 
         WHERE 
-        mail_address = :mailAddress 
+            mail_address = :mailAddress 
         and 
-        password = :password;
+            password = :password;
         """; 
     /**
      * 管理者情報を挿入する。
