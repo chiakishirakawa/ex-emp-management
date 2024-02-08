@@ -19,7 +19,7 @@ public class AdministratorRepository {
         Administrator administrator = new Administrator();
         administrator.setId(rs.getInt("id"));
         administrator.setName(rs.getString("name"));
-        administrator.setMailAddress(rs.getString("mailAddress"));
+        administrator.setMailAddress(rs.getString("mail_address"));
         administrator.setPassword(rs.getString("password"));
         return administrator;
     };
@@ -69,7 +69,8 @@ public class AdministratorRepository {
      */
     public Administrator findByMailAddressAndPassword(String mailAddress, String password) {
         SqlParameterSource sqlParameterSource = new MapSqlParameterSource()
-                .addValue("mailAddress", mailAddress).addValue("password", password);
+                .addValue("mailAddress", mailAddress)
+                .addValue("password", password);
         Administrator administrator = null;
         try {
             administrator = template.queryForObject(FIND_BY_MAIL_ADDRESS_AND_PASSWORD, sqlParameterSource,
