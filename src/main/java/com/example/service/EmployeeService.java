@@ -17,9 +17,19 @@ public class EmployeeService {
 
     /**
      * 従業員の一覧を取得
+     * 
      * @return 全従業員情報のリスト
      */
-    public List<Employee> showList(){
+    public List<Employee> showList() {
         return employeeRepository.findAll();
+    }
+
+    /**
+     * 従業員IDで従業員情報を取得する
+     * @param id 従業員Id
+     * @return 従業員情報
+     */
+    public Employee showDetail(Integer id){
+        return employeeRepository.load(id);
     }
 }
