@@ -53,5 +53,5 @@ public class EmployeeController {
         Employee employee = employeeService.showDetail(form.getId());
         employee.setDependentsCount(form.getDependentsCount());
         employeeService.update(employee);
-        return "/employee/showList";
+        return "redirect:/employee/showList";
     }}

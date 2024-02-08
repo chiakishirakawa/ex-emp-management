@@ -77,7 +77,7 @@ public class EmployeeRepository {
     private static final String UPDATE_SQL = """
             UPDATE employees
             SET
-            name= :name
+            name = :name
             """;
 
     /**
@@ -118,37 +118,34 @@ public class EmployeeRepository {
     public void update(Employee employee) {
         StringBuilder sql = new StringBuilder();
         sql.append(UPDATE_SQL);
-        if (employee.getName() == null) {
-            sql.append("name = :name");
+        if (employee.getImage() != null) {
+            sql.append(",image = :image");
         }
-        if (employee.getImage() == null) {
-            sql.append("image = :image");
+        if (employee.getGender() != null) {
+            sql.append(",gender = :gender");
         }
-        if (employee.getGender() == null) {
-            sql.append("gender = :gender");
+        if (employee.getMailAddress() != null) {
+            sql.append(",mail_address = :mailAddress");
         }
-        if (employee.getMailAddress() == null) {
-            sql.append("mail_address = :mailAddress");
+        if (employee.getZipCode() != null) {
+            sql.append(",zip_code = :zipCode");
         }
-        if (employee.getZipCode() == null) {
-            sql.append("zip_code = :zipCode");
+        if (employee.getAddress() != null) {
+            sql.append(",address = :address");
         }
-        if (employee.getAddress() == null) {
-            sql.append("address = :address");
+        if (employee.getTelephone() != null) {
+            sql.append(",telephone = :telephone");
         }
-        if (employee.getTelephone() == null) {
-            sql.append("telephone = :telephone");
+        if (employee.getSalary() != null) {
+            sql.append(",salary = :salary");
         }
-        if (employee.getSalary() == null) {
-            sql.append("salary = :salary");
+        if (employee.getCharacteristics() != null) {
+            sql.append(",characteristics = :characteristics");
         }
-        if (employee.getCharacteristics() == null) {
-            sql.append("characteristics = :characteristics");
+        if (employee.getDependentsCount() != null) {
+            sql.append(",dependents_count = :dependentsCount");
         }
-        if (employee.getDependentsCount() == null) {
-            sql.append("dependents_count = :dependentsCount");
-        }
-        sql.append("WHERE id = :id;");
+        sql.append(" WHERE id = :id;");
         SqlParameterSource sqlParameterSource = new BeanPropertySqlParameterSource(employee);
         template.update(sql.toString(), sqlParameterSource);
     }
