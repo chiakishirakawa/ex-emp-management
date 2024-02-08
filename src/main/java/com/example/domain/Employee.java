@@ -3,34 +3,34 @@ package com.example.domain;
 import java.util.Date;
 
 public class Employee {
-    /**ID */
+    /** ID */
     private Integer id;
-    /**従業員名 */
+    /** 従業員名 */
     private String name;
-    /**画像 */
+    /** 画像 */
     private String image;
-    /**性別 */
+    /** 性別 */
     private String gender;
-    /**入社日 */
+    /** 入社日 */
     private Date hireDate;
-    /**メールアドレス */
+    /** メールアドレス */
     private String mailAddress;
-    /**郵便番号 */
+    /** 郵便番号 */
     private String zipCode;
-    /**住所 */
+    /** 住所 */
     private String address;
-    /**電話番号 */
+    /** 電話番号 */
     private String telephone;
-    /**給料 */
+    /** 給料 */
     private Integer salary;
-    /**特性 */
+    /** 特性 */
     private String characteristics;
-    /**扶養人数 */
+    /** 扶養人数 */
     private Integer dependentsCount;
 
-    public Employee(){
+    public Employee() {
     }
-    
+
     public Employee(Integer id, String name, String image, String gender, Date hireDate, String mailAddress,
             String zipCode, String address, String telephone, Integer salary, String characteristics,
             Integer dependentsCount) {
