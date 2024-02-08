@@ -70,12 +70,22 @@ public class AdministratorController {
     @PostMapping("/login")
     public String login(LoginForm form, Model model) {
         Administrator administrator = administratorService.login(form.getMailAddress(), form.getPassword());
-        if(administrator == null){
+        if (administrator == null) {
             model.addAttribute("error", "メールアドレスまたはパスワードが不正です。");
             return "administrator/login";
         }
         session.setAttribute("administratorName", administrator.getName());
         return "redirect:/employee/showList";
+    }
+    /**
+     * ログアウトする
+     * @param form
+     * @return ログイン画面の表示
+     */
+    @GetMapping("/logout")
+    public String logout(LoginForm form) {
+        session.invalidate();
+        return "redirect:/";
     }
 
 }
