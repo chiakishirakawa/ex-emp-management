@@ -27,8 +27,10 @@ public class AdministratorController {
     public String toInsert(InsertAdministratorForm form) {
         return ("administrator/insert");
     }
+
     /**
      * 管理書情報を登録する
+     * 
      * @param form 登録する管理者情報
      * @return ログイン画面
      */
@@ -41,14 +43,16 @@ public class AdministratorController {
         administratorService.insert(administrator);
         return ("redirect:/");
     }
+
     /**
      * ログイン画面の表示
+     * 
      * @param form ログイン情報受取用のフォーム
      * @return ログイン画面
      */
-    @GetMapping("/toLogin")
-    public String toLogin(LoginForm form){
-        return("administrator/login");
+    @GetMapping("/")
+    public String toLogin(LoginForm form) {
+        return ("administrator/login");
     }
 
 }

@@ -2,14 +2,14 @@ package com.example.form;
 
 public class LoginForm {
     /**メールアドレス */
-    private String mailAString;
+    private String mailAddress;
     /**パスワード */
     private String password;
-    public String getMailAString() {
-        return mailAString;
+    public String getMailAddress() {
+        return mailAddress;
     }
-    public void setMailAString(String mailAString) {
-        this.mailAString = mailAString;
+    public void setMailAddress(String mailAddress) {
+        this.mailAddress = mailAddress;
     }
     public String getPassword() {
         return password;
@@ -19,7 +19,7 @@ public class LoginForm {
     }
     @Override
     public String toString() {
-        return "LoginForm [mailAString=" + mailAString + ", password=" + "****" + "]";
+        return "LoginForm [mailAddress=" + mailAddress + ", password=" + "****" + "]";
     }
     
 
