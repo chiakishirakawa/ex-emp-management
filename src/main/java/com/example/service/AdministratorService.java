@@ -19,4 +19,13 @@ public class AdministratorService {
     public void insert(Administrator administrator){
         administratorRepository.insert(administrator);
     }
+    /**
+     * ログイン処理を行う
+     * @param mailAddress ログインする管理者のメールアドレス
+     * @param password ログインする管理者のパスワード
+     * @return ログインする管理者情報
+     */
+    public Administrator login(String mailAddress, String password){
+        return administratorRepository.findByMailAddressAndPassword(mailAddress, password);
+    }
 }
